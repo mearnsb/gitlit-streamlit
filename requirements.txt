@@ -1,0 +1,8 @@
+streamlit
+streamlit-chat
+openai
+requests
+fuzzywuzzy
+faker
+langchain
+streamlit-ace

@@ -1,0 +1,1379 @@
+,id,example,description
+0,__deepcopy__,Faker().__deepcopy__(),No docstring available
+1,__dir__,Faker().__dir__(),Default dir() implementation.
+2,__getattr__,Faker().__getattr__(),"Handles cache access and proxying behavior
+
+:param attr: attribute name
+:return: the appropriate attribute"
+3,__getattribute__,Faker().__getattribute__(),"Handles the ""attribute resolution"" behavior for declared members of this proxy class
+
+The class method `seed` cannot be called from an instance.
+
+:param attr: attribute name
+:return: the appropriate attribute"
+4,__getitem__,Faker().__getitem__(),No docstring available
+5,__init__,Faker().__init__(),Initialize self.  See help(type(self)) for accurate signature.
+6,__setstate__,Faker().__setstate__(),No docstring available
+7,_map_provider_method,Faker()._map_provider_method(),"Creates a 2-tuple of factories and weights for the given provider method name
+
+The first element of the tuple contains a list of compatible factories.
+The second element of the tuple contains a list of distribution weights.
+
+:param method_name: Name of provider method
+:return: 2-tuple (factories, weights)"
+8,_select_factory,Faker()._select_factory(),"Returns a random factory that supports the provider method
+
+:param method_name: Name of provider method
+:return: A factory that supports the provider method"
+9,_select_factory_choice,Faker()._select_factory_choice(),No docstring available
+10,_select_factory_distribution,Faker()._select_factory_distribution(),No docstring available
+11,aba,Faker().aba(),Generate an ABA routing transit number.
+13,address,Faker().address(),":example: '791 Crist Parks, Sashabury, IL 86039-9874'"
+14,administrative_unit,Faker().administrative_unit(),No docstring available
+15,am_pm,Faker().am_pm(),No docstring available
+16,android_platform_token,Faker().android_platform_token(),Generate an Android platform token used in user agent strings.
+17,ascii_company_email,Faker().ascii_company_email(),No docstring available
+18,ascii_email,Faker().ascii_email(),No docstring available
+19,ascii_free_email,Faker().ascii_free_email(),No docstring available
+20,ascii_safe_email,Faker().ascii_safe_email(),No docstring available
+21,bank_country,Faker().bank_country(),Generate the bank provider's ISO 3166-1 alpha-2 country code.
+22,basic_phone_number,Faker().basic_phone_number(),No docstring available
+23,bban,Faker().bban(),Generate a Basic Bank Account Number (BBAN).
+25,boolean,Faker().boolean(),"Generate a random boolean value based on ``chance_of_getting_true``.
+
+:sample: chance_of_getting_true=25
+:sample: chance_of_getting_true=50
+:sample: chance_of_getting_true=75"
+26,bothify,Faker().bothify(),"Generate a string with each placeholder in ``text`` replaced according to the following rules:
+
+- Number signs ('#') are replaced with a random digit (0 to 9).
+- Question marks ('?') are replaced with a random character from ``letters``.
+
+By default, ``letters`` contains all ASCII letters, uppercase and lowercase.
+
+Under the hood, this method uses :meth:`numerify() <faker.providers.BaseProvider.numerify>` and
+and :meth:`lexify() <faker.providers.BaseProvider.lexify>` to generate random values for number
+signs and question marks respectively.
+
+:sample: letters='ABCDE'
+:sample: text='Product Number: ????-########'
+:sample: text='Product Number: ????-########', letters='ABCDE'"
+27,bs,Faker().bs(),:example: 'integrate extensible convergence'
+28,building_number,Faker().building_number(),:example: '791'
+29,catch_phrase,Faker().catch_phrase(),:example: 'Robust full-range hub'
+30,century,Faker().century(),:example: 'XVII'
+31,chrome,Faker().chrome(),Generate a Chrome web browser user agent string.
+32,city,Faker().city(),:example: 'Sashabury'
+33,city_prefix,Faker().city_prefix(),No docstring available
+34,city_suffix,Faker().city_suffix(),:example: 'town'
+35,color,Faker().color(),"Generate a color in a human-friendly way.
+
+Under the hood, this method first creates a color represented in the HSV
+color model and then converts it to the desired ``color_format``. The
+argument ``hue`` controls the H value according to the following
+rules:
+
+- If the value is a number from ``0`` to ``360``, it will serve as the H
+  value of the generated color.
+- If the value is a tuple/list of 2 numbers from 0 to 360, the color's H
+  value will be randomly selected from that range.
+- If the value is a valid string, the color's H value will be randomly
+  selected from the H range corresponding to the supplied string. Valid
+  values are ``'monochrome'``, ``'red'``, ``'orange'``, ``'yellow'``,
+  ``'green'``, ``'blue'``, ``'purple'``, and ``'pink'``.
+
+The argument ``luminosity`` influences both S and V values and is
+partially affected by ``hue`` as well. The finer details of this
+relationship are somewhat involved, so please refer to the source code
+instead if you wish to dig deeper. To keep the interface simple, this
+argument either can be omitted or can accept the following string
+values:``'bright'``, ``'dark'``, ``'light'``, or ``'random'``.
+
+The argument ``color_format`` controls in which color model the color is
+represented. Valid values are ``'hsv'``, ``'hsl'``, ``'rgb'``, or
+``'hex'`` (default).
+
+:sample: hue='red'
+:sample: luminosity='light'
+:sample: hue=(100, 200), color_format='rgb'
+:sample: hue='orange', luminosity='bright'
+:sample: hue=135, luminosity='dark', color_format='hsv'
+:sample: hue=(300, 20), luminosity='random', color_format='hsl'"
+36,color_hsl,Faker().color_hsl(),Generate a HSL color tuple in a human-friendly way.
+37,color_hsv,Faker().color_hsv(),Generate a HSV color tuple in a human-friendly way.
+38,color_name,Faker().color_name(),Generate a color name.
+39,color_rgb,Faker().color_rgb(),Generate a RGB color tuple of integers in a human-friendly way.
+40,color_rgb_float,Faker().color_rgb_float(),Generate a RGB color tuple of floats in a human-friendly way.
+41,company,Faker().company(),:example: 'Acme Ltd'
+42,company_email,Faker().company_email(),No docstring available
+43,company_suffix,Faker().company_suffix(),:example: 'Ltd'
+44,coordinate,Faker().coordinate(),Optionally center the coord and pick a point within radius.
+45,country,Faker().country(),No docstring available
+46,country_calling_code,Faker().country_calling_code(),No docstring available
+47,country_code,Faker().country_code(),No docstring available
+48,credit_card_expire,Faker().credit_card_expire(),"Generate a credit card expiry date.
+
+This method uses |date_time_between| under the hood to generate the
+expiry date, so the ``start`` and ``end`` arguments work in the same way
+here as it would in that method. For the actual formatting of the expiry
+date, |strftime| is used and ``date_format`` is simply passed
+to that method."
+49,credit_card_full,Faker().credit_card_full(),Generate a set of credit card details.
+50,credit_card_number,Faker().credit_card_number(),Generate a valid credit card number.
+51,credit_card_provider,Faker().credit_card_provider(),Generate a credit card provider name.
+52,credit_card_security_code,Faker().credit_card_security_code(),Generate a credit card security code.
+53,cryptocurrency,Faker().cryptocurrency(),No docstring available
+54,cryptocurrency_code,Faker().cryptocurrency_code(),No docstring available
+55,cryptocurrency_name,Faker().cryptocurrency_name(),No docstring available
+56,csv,Faker().csv(),"Generate random comma-separated values.
+
+For more information on the different arguments of this method, please refer to
+:meth:`dsv() <faker.providers.misc.Provider.dsv>` which is used under the hood.
+
+:sample: data_columns=('{{name}}', '{{address}}'), num_rows=10, include_row_ids=False
+:sample: header=('Name', 'Address', 'Favorite Color'),
+        data_columns=('{{name}}', '{{address}}', '{{safe_color_name}}'),
+        num_rows=10, include_row_ids=True"
+57,currency,Faker().currency(),No docstring available
+58,currency_code,Faker().currency_code(),No docstring available
+59,currency_name,Faker().currency_name(),No docstring available
+60,currency_symbol,Faker().currency_symbol(),:example: $
+61,current_country,Faker().current_country(),No docstring available
+62,current_country_code,Faker().current_country_code(),No docstring available
+63,date,Faker().date(),"Get a date string between January 1, 1970 and now.
+
+:param pattern: Format of the date (year-month-day by default)
+:example: '2008-11-27'
+:return: Date"
+64,date_between,Faker().date_between(),"Get a Date object based on a random date between two given dates.
+Accepts date strings that can be recognized by strtotime().
+
+:param start_date: Defaults to 30 years ago
+:param end_date: Defaults to ""today""
+:example: Date('1999-02-02')
+:return: Date"
+65,date_between_dates,Faker().date_between_dates(),"Takes two Date objects and returns a random date between the two given dates.
+Accepts Date or datetime objects
+
+:param date_start: Date
+:param date_end: Date
+:return: Date"
+66,date_object,Faker().date_object(),"Get a date object between January 1, 1970 and now
+
+:example: datetime.date(2016, 9, 20)"
+67,date_of_birth,Faker().date_of_birth(),"Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.
+
+:param tzinfo: Defaults to None.
+:param minimum_age: Defaults to 0.
+:param maximum_age: Defaults to 115.
+
+:example: Date('1979-02-02')
+:return: Date"
+68,date_this_century,Faker().date_this_century(),"Gets a Date object for the current century.
+
+:param before_today: include days in current century before today
+:param after_today: include days in current century after today
+:example: Date('2012-04-04')
+:return: Date"
+69,date_this_decade,Faker().date_this_decade(),"Gets a Date object for the decade year.
+
+:param before_today: include days in current decade before today
+:param after_today: include days in current decade after today
+:example: Date('2012-04-04')
+:return: Date"
+70,date_this_month,Faker().date_this_month(),"Gets a Date object for the current month.
+
+:param before_today: include days in current month before today
+:param after_today: include days in current month after today
+:example: dtdate('2012-04-04')
+:return: dtdate"
+71,date_this_year,Faker().date_this_year(),"Gets a Date object for the current year.
+
+:param before_today: include days in current year before today
+:param after_today: include days in current year after today
+:example: Date('2012-04-04')
+:return: Date"
+72,date_time,Faker().date_time(),"Get a datetime object for a date between January 1, 1970 and now
+
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('2005-08-16 20:39:21')
+:return: datetime"
+73,date_time_ad,Faker().date_time_ad(),"Get a datetime object for a date between January 1, 001 and now
+
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('1265-03-22 21:15:52')
+:return: datetime"
+74,date_time_between,Faker().date_time_between(),"Get a datetime object based on a random date between two given dates.
+Accepts date strings that can be recognized by strtotime().
+
+:param start_date: Defaults to 30 years ago
+:param end_date: Defaults to ""now""
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('1999-02-02 11:42:52')
+:return: datetime"
+75,date_time_between_dates,Faker().date_time_between_dates(),"Takes two datetime objects and returns a random datetime between the two
+given datetimes.
+Accepts datetime objects.
+
+:param datetime_start: datetime
+:param datetime_end: datetime
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('1999-02-02 11:42:52')
+:return: datetime"
+76,date_time_this_century,Faker().date_time_this_century(),"Gets a datetime object for the current century.
+
+:param before_now: include days in current century before today
+:param after_now: include days in current century after today
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('2012-04-04 11:02:02')
+:return: datetime"
+77,date_time_this_decade,Faker().date_time_this_decade(),"Gets a datetime object for the decade year.
+
+:param before_now: include days in current decade before today
+:param after_now: include days in current decade after today
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('2012-04-04 11:02:02')
+:return: datetime"
+78,date_time_this_month,Faker().date_time_this_month(),"Gets a datetime object for the current month.
+
+:param before_now: include days in current month before today
+:param after_now: include days in current month after today
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('2012-04-04 11:02:02')
+:return: datetime"
+79,date_time_this_year,Faker().date_time_this_year(),"Gets a datetime object for the current year.
+
+:param before_now: include days in current year before today
+:param after_now: include days in current year after today
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('2012-04-04 11:02:02')
+:return: datetime"
+80,day_of_month,Faker().day_of_month(),No docstring available
+81,day_of_week,Faker().day_of_week(),No docstring available
+82,del_arguments,Faker().del_arguments(),"Delete an argument from an argument group or the entire argument group.
+Used in conjunction with the set_arguments() method.
+
+generator.del_arguments('small')
+generator.del_arguments('small', 'max_value')"
+83,dga,Faker().dga(),"Generates a domain name by given date
+https://en.wikipedia.org/wiki/Domain_generation_algorithm
+
+:type year: int
+:type month: int
+:type day: int
+:type tld: str
+:type length: int
+:rtype: str"
+84,domain_name,Faker().domain_name(),"Produce an Internet domain name with the specified number of
+subdomain levels.
+
+>>> domain_name()
+nichols-phillips.com
+>>> domain_name(2)
+williamson-hopkins.jackson.com"
+85,domain_word,Faker().domain_word(),No docstring available
+86,dsv,Faker().dsv(),"Generate random delimiter-separated values.
+
+This method's behavior share some similarities with ``csv.writer``. The ``dialect`` and
+``**fmtparams`` arguments are the same arguments expected by ``csv.writer`` to control its
+behavior, and instead of expecting a file-like object to where output will be written, the
+output is controlled by additional keyword arguments and is returned as a string.
+
+The ``dialect`` argument defaults to ``'faker-csv'`` which is the name of a ``csv.excel``
+subclass with full quoting enabled.
+
+The ``header`` argument expects a list or a tuple of strings that will serve as the header row
+if supplied. The ``data_columns`` argument expects a list or a tuple of string tokens, and these
+string tokens will be passed to  :meth:`pystr_format() <faker.providers.python.Provider.pystr_format>`
+for data generation. Argument Groups are used to pass arguments to the provider methods.
+Both ``header`` and ``data_columns`` must be of the same length.
+
+Example:
+    fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100})
+    fake.dsv(data_columns=('{{ name }}', '{{ pyint:top_half }}'))
+
+The ``num_rows`` argument controls how many rows of data to generate, and the ``include_row_ids``
+argument may be set to ``True`` to include a sequential row ID column.
+
+:sample: dialect='excel', data_columns=('{{name}}', '{{address}}')
+:sample: dialect='excel-tab', data_columns=('{{name}}', '{{address}}'), include_row_ids=True
+:sample: data_columns=('{{name}}', '{{address}}'), num_rows=5, delimiter='$'"
+87,ean,Faker().ean(),"Generate an EAN barcode of the specified ``length``.
+
+The value of ``length`` can only be ``8`` or ``13`` (default) which will
+create an EAN-8 or an EAN-13 barcode respectively.
+
+If a value for ``prefixes`` is specified, the result will begin with one
+of the sequences in ``prefixes``.
+
+:sample: length=13
+:sample: length=8
+:sample: prefixes=('00',)
+:sample: prefixes=('45', '49')"
+88,ean13,Faker().ean13(),"Generate an EAN-13 barcode.
+
+If ``leading_zero`` is ``True``, the leftmost digit of the barcode will
+be set to ``0``. If ``False``, the leftmost digit cannot be ``0``. If
+``None`` (default), the leftmost digit can be any digit.
+
+If a value for ``prefixes`` is specified, the result will begin with one
+of the sequences in ``prefixes`` and will ignore ``leading_zero``.
+
+This method uses the standard barcode provider's |ean13| under the
+hood with the ``prefixes`` argument set to the correct value to attain
+the behavior described above.
+
+.. note::
+   EAN-13 barcode that starts with a zero can be converted to UPC-A
+   by dropping the leading zero. This may cause problems with readers
+   that treat all of these code as UPC-A codes and drop the first digit
+   when reading it.
+
+   You can set the argument ``prefixes`` ( or ``leading_zero`` for
+   convenience) explicitly to avoid or to force the generated barcode to
+   start with a zero. You can also generate actual UPC-A barcode with
+   |EnUsBarcodeProvider.upc_a|.
+
+:sample:
+:sample: leading_zero=False
+:sample: leading_zero=True
+:sample: prefixes=('00',)
+:sample: prefixes=('45', '49')"
+89,ean8,Faker().ean8(),"Generate an EAN-8 barcode.
+
+This method uses |ean| under the hood with the ``length`` argument
+explicitly set to ``8``.
+
+If a value for ``prefixes`` is specified, the result will begin with one
+of the sequences in ``prefixes``.
+
+:sample:
+:sample: prefixes=('00',)
+:sample: prefixes=('45', '49')"
+90,ein,Faker().ein(),"Generate a random United States Employer Identification Number (EIN).
+
+An United States An Employer Identification Number (EIN) is
+also known as a Federal Tax Identification Number, and is
+used to identify a business entity. EINs follow a format of a
+two-digit prefix followed by a hyphen and a seven-digit sequence:
+##-######
+
+https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers"
+91,email,Faker().email(),No docstring available
+92,emoji,Faker().emoji(),:example: '😉'
+93,enum,Faker().enum(),"Returns a random enum of the provided input `Enum` type.
+
+:param enum_cls: The `Enum` type to produce the value for.
+:returns: A randomly selected enum value."
+94,file_extension,Faker().file_extension(),"Generate a file extension under the specified ``category``.
+
+If ``category`` is ``None``, a random category will be used. The list of
+valid categories include: ``'audio'``, ``'image'``, ``'office'``,
+``'text'``, and ``'video'``.
+
+:sample:
+:sample: category='image'"
+95,file_name,Faker().file_name(),"Generate a random file name with extension.
+
+If ``extension`` is ``None``, a random extension will be created
+under the hood using |file_extension| with the specified
+``category``. If a value for ``extension`` is provided, the
+value will be used instead, and ``category`` will be ignored.
+The actual name part itself is generated using |word|. If
+extension is an empty string then no extension will be added,
+and file_name will be the same as |word|.
+
+:sample: size=10
+:sample: category='audio'
+:sample: extension='abcdef'
+:sample: category='audio', extension='abcdef'
+:sample: extension=''"
+96,file_path,Faker().file_path(),"Generate an pathname to a file.
+
+This method uses |file_name| under the hood to generate the file
+name itself, and ``depth`` controls the depth of the directory
+path, and |word| is used under the hood to generate the
+different directory names.
+
+If ``absolute`` is ``True`` (default), the generated path starts
+with ``/`` and is absolute. Otherwise, the generated path is
+relative.
+
+If used, ``extension`` can be either a string, forcing that
+extension, a sequence of strings (one will be picked at random),
+or an empty sequence (the path will have no extension). Default
+behaviour is the same as |file_name|
+
+if ``file_system`` is set (default=""linux""), the generated path uses
+specified file system path standard, the list of valid file systems include:
+``'windows'``, ``'linux'``.
+
+:sample: size=10
+:sample: depth=3
+:sample: depth=5, category='video'
+:sample: depth=5, category='video', extension='abcdef'
+:sample: extension=[]
+:sample: extension=''
+:sample: extension=[""a"", ""bc"", ""def""]
+:sample: depth=5, category='video', extension='abcdef', file_system='windows'"
+97,firefox,Faker().firefox(),Generate a Mozilla Firefox web browser user agent string.
+98,first_name,Faker().first_name(),No docstring available
+99,first_name_female,Faker().first_name_female(),No docstring available
+100,first_name_male,Faker().first_name_male(),No docstring available
+101,first_name_nonbinary,Faker().first_name_nonbinary(),No docstring available
+102,fixed_width,Faker().fixed_width(),"Generate random fixed width values.
+
+Using a list of tuple records that is passed as ``data_columns``, that
+defines the structure that will be generated. Arguments within the
+record are provider specific, and should be a dictionary that will be
+passed to the provider method.
+
+Data Column List format
+    [('field width', 'definition', {'arguments'})]
+
+The definition can be 'provider', 'provider:argument_group', tokenized
+'string {{ provider:argument_group }}' that is passed to the python
+provider method pystr_format() for generation, or a fixed '@word'.
+Using Lists, Tuples, and Dicts as a definition for structure.
+
+Argument Groups can be used to pass arguments to the provider methods,
+but will override the arguments supplied in the tuple record.
+
+Example:
+    fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100})
+    fake.fixed_width(data_columns=[(20, 'name'), (3, 'pyint:top_half')])
+
+:param data_columns: specification for the data structure
+:type data_columns: list
+:param num_rows: number of rows the generator will yield
+:type num_rows: int
+:param align: positioning of the value. (left, middle, right)
+:type align: str
+:return: Serialized Fixed Width data
+:rtype: str
+
+:sample: data_columns=[(20, 'name'), (3, 'pyint', {'min_value': 50,
+        'max_value': 100})], align='right', num_rows=2"
+103,format,Faker().format(),This is a secure way to make a fake from another Provider.
+104,free_email,Faker().free_email(),No docstring available
+105,free_email_domain,Faker().free_email_domain(),No docstring available
+106,future_date,Faker().future_date(),"Get a Date object based on a random date between 1 day from now and a
+given date.
+Accepts date strings that can be recognized by strtotime().
+
+:param end_date: Defaults to ""+30d""
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: dtdate('2030-01-01')
+:return: dtdate"
+107,future_datetime,Faker().future_datetime(),"Get a datetime object based on a random date between 1 second form now
+and a given date.
+Accepts date strings that can be recognized by strtotime().
+
+:param end_date: Defaults to ""+30d""
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('1999-02-02 11:42:52')
+:return: datetime"
+108,get_arguments,Faker().get_arguments(),"Get the value of an argument configured within a argument group, or
+the entire group as a dictionary. Used in conjunction with the
+set_arguments() method.
+
+generator.get_arguments('small', 'max_value')
+generator.get_arguments('small')"
+109,get_formatter,Faker().get_formatter(),No docstring available
+110,get_providers,Faker().get_providers(),Returns added providers.
+111,hex_color,Faker().hex_color(),Generate a color formatted as a hex triplet.
+112,hexify,Faker().hexify(),"Generate a string with each circumflex ('^') in ``text``
+replaced with a random hexadecimal character.
+
+By default, ``upper`` is set to False. If set to ``True``, output
+will be formatted using uppercase hexadecimal characters.
+
+:sample: text='MAC Address: ^^:^^:^^:^^:^^:^^'
+:sample: text='MAC Address: ^^:^^:^^:^^:^^:^^', upper=True"
+113,hostname,Faker().hostname(),"Produce a hostname with specified number of subdomain levels.
+
+>>> hostname()
+db-01.nichols-phillips.com
+>>> hostname(0)
+laptop-56
+>>> hostname(2)
+web-12.williamson-hopkins.jackson.com"
+114,http_method,Faker().http_method(),"Returns random HTTP method
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+:rtype: str"
+115,http_status_code,Faker().http_status_code(),"Returns random HTTP status code
+https://www.rfc-editor.org/rfc/rfc9110#name-status-codes
+:param include_unassigned: Whether to include status codes which have
+    not yet been assigned or are unused
+
+:return: a random three digit status code
+:rtype: int
+
+:example: 404"
+116,iana_id,Faker().iana_id(),"Returns IANA Registrar ID
+https://www.iana.org/assignments/registrar-ids/registrar-ids.xhtml
+
+:rtype: str"
+117,iban,Faker().iban(),Generate an International Bank Account Number (IBAN).
+119,image_url,Faker().image_url(),"Returns URL to placeholder image
+Example: http://placehold.it/640x480
+
+:param width: Optional image width
+:param height: Optional image height
+:param placeholder_url: Optional template string of image URLs from custom
+    placeholder service. String must contain ``{width}`` and ``{height}``
+    placeholders, eg: ``https:/example.com/{width}/{height}``.
+:rtype: str"
+120,internet_explorer,Faker().internet_explorer(),Generate an IE web browser user agent string.
+121,invalid_ssn,Faker().invalid_ssn(),"Generate a random invalid United States Social Security Identification Number (SSN).
+
+Invalid SSNs have the following characteristics:
+Cannot begin with the number 9
+Cannot begin with 666 in positions 1 - 3
+Cannot begin with 000 in positions 1 - 3
+Cannot contain 00 in positions 4 - 5
+Cannot contain 0000 in positions 6 - 9
+
+https://www.ssa.gov/kc/SSAFactSheet--IssuingSSNs.pdf
+
+Additionally, return an invalid SSN that is NOT a valid ITIN by excluding certain ITIN related ""group"" values"
+122,ios_platform_token,Faker().ios_platform_token(),Generate an iOS platform token used in user agent strings.
+123,ipv4,Faker().ipv4(),"Returns a random IPv4 address or network with a valid CIDR.
+
+:param network: Network address
+:param address_class: IPv4 address class (a, b, or c)
+:param private: Public or private
+:returns: IPv4"
+124,ipv4_network_class,Faker().ipv4_network_class(),"Returns a IPv4 network class 'a', 'b' or 'c'.
+
+:returns: IPv4 network class"
+125,ipv4_private,Faker().ipv4_private(),"Returns a private IPv4.
+
+:param network: Network address
+:param address_class: IPv4 address class (a, b, or c)
+:returns: Private IPv4"
+126,ipv4_public,Faker().ipv4_public(),"Returns a public IPv4 excluding private blocks.
+
+:param network: Network address
+:param address_class: IPv4 address class (a, b, or c)
+:returns: Public IPv4"
+127,ipv6,Faker().ipv6(),Produce a random IPv6 address or network with a valid CIDR
+128,isbn10,Faker().isbn10(),No docstring available
+129,isbn13,Faker().isbn13(),No docstring available
+130,iso8601,Faker().iso8601(),"Get a timestamp in ISO 8601 format (or one of its profiles).
+
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:param sep: separator between date and time, defaults to 'T'
+:param timespec: format specifier for the time part, defaults to 'auto' - see datetime.isoformat() documentation
+:example: '2003-10-21T16:05:52+0000'"
+131,items,Faker().items(),No docstring available
+132,itin,Faker().itin(),"Generate a random United States Individual Taxpayer Identification Number (ITIN).
+
+An United States Individual Taxpayer Identification Number
+(ITIN) is a tax processing number issued by the Internal
+Revenue Service. It is a nine-digit number that always begins
+with the number 9 and has a range of 70-88 in the fourth and
+fifth digit. Effective April 12, 2011, the range was extended
+to include 900-70-0000 through 999-88-9999, 900-90-0000
+through 999-92-9999 and 900-94-0000 through 999-99-9999.
+https://www.irs.gov/individuals/international-taxpayers/general-itin-information"
+133,job,Faker().job(),No docstring available
+134,json,Faker().json(),"Generate random JSON structure values.
+
+Using a dictionary or list of records that is passed as ``data_columns``,
+define the structure that is used to build JSON structures.  For complex
+data structures it is recommended to use the dictionary format.
+
+Data Column Dictionary format:
+    {'key name': 'definition'}
+
+The definition can be 'provider', 'provider:argument_group', tokenized
+'string {{ provider:argument_group }}' that is passed to the python
+provider method pystr_format() for generation, or a fixed '@word'.
+Using Lists, Tuples, and Dicts as a definition for structure.
+
+Example:
+    fake.set_arguments('top_half', {'min_value': 50, 'max_value': 100})
+    fake.json(data_columns={'Name': 'name', 'Score': 'pyint:top_half'})
+
+Data Column List format:
+    [('key name', 'definition', {'arguments'})]
+
+With the list format the definition can be a list of records, to create
+a list within the structure data.  For literal entries within the list,
+set the 'field_name' to None.
+
+:param data_columns: specification for the data structure
+:type data_columns: dict
+:param num_rows: number of rows the returned
+:type num_rows: int
+:param indent: number of spaces to indent the fields
+:type indent: int
+:param cls: optional json encoder to use for non-standard objects such as datetimes
+:type cls: json.JSONEncoder
+:return: Serialized JSON data
+:rtype: str
+
+:sample: data_columns={'Spec': '@1.0.1', 'ID': 'pyint',
+        'Details': {'Name': 'name', 'Address': 'address'}}, num_rows=2
+:sample: data_columns={'Candidates': ['name', 'name', 'name']},
+        num_rows=1
+:sample: data_columns=[('Name', 'name'), ('Points', 'pyint',
+        {'min_value': 50, 'max_value': 100})], num_rows=1"
+135,json_bytes,Faker().json_bytes(),"Generate random JSON structure and return as bytes.
+
+For more information on the different arguments of this method, refer to
+:meth:`json() <faker.providers.misc.Provider.json>` which is used under the hood."
+136,language_code,Faker().language_code(),Generate a random i18n language code (e.g. en).
+137,language_name,Faker().language_name(),Generate a random i18n language name (e.g. English).
+138,last_name,Faker().last_name(),No docstring available
+139,last_name_female,Faker().last_name_female(),No docstring available
+140,last_name_male,Faker().last_name_male(),No docstring available
+141,last_name_nonbinary,Faker().last_name_nonbinary(),No docstring available
+142,latitude,Faker().latitude(),No docstring available
+143,latlng,Faker().latlng(),No docstring available
+144,lexify,Faker().lexify(),"Generate a string with each question mark ('?') in ``text``
+replaced with a random character from ``letters``.
+
+By default, ``letters`` contains all ASCII letters, uppercase and lowercase.
+
+:sample: text='Random Identifier: ??????????'
+:sample: text='Random Identifier: ??????????', letters='ABCDE'"
+145,license_plate,Faker().license_plate(),Generate a license plate.
+146,linux_platform_token,Faker().linux_platform_token(),Generate a Linux platform token used in user agent strings.
+147,linux_processor,Faker().linux_processor(),Generate a Linux processor token used in user agent strings.
+148,local_latlng,Faker().local_latlng(),"Returns a location known to exist on land in a country specified by `country_code`.
+Defaults to 'en_US'. See the `land_coords` list for available locations/countries."
+149,locale,Faker().locale(),Generate a random underscored i18n locale code (e.g. en_US).
+150,localized_ean,Faker().localized_ean(),"Generate a localized EAN barcode of the specified ``length``.
+
+The value of ``length`` can only be ``8`` or ``13`` (default) which will
+create an EAN-8 or an EAN-13 barcode respectively.
+
+This method uses the standard barcode provider's |ean| under the hood
+with the ``prefixes`` argument explicitly set to ``local_prefixes`` of
+a localized barcode provider implementation.
+
+:sample:
+:sample: length=13
+:sample: length=8"
+151,localized_ean13,Faker().localized_ean13(),"Generate a localized EAN-13 barcode.
+
+This method uses |localized_ean| under the hood with the ``length``
+argument explicitly set to ``13``."
+152,localized_ean8,Faker().localized_ean8(),"Generate a localized EAN-8 barcode.
+
+This method uses |localized_ean| under the hood with the ``length``
+argument explicitly set to ``8``."
+153,location_on_land,Faker().location_on_land(),"Returns a random tuple specifying a coordinate set guaranteed to exist on land.
+Format is `(latitude, longitude, place name, two-letter country code, timezone)`
+Pass `coords_only` to return coordinates without metadata."
+154,longitude,Faker().longitude(),No docstring available
+155,mac_address,Faker().mac_address(),"Returns a random MAC address.
+
+:param multicast: Multicast address
+:returns: MAC Address"
+156,mac_platform_token,Faker().mac_platform_token(),Generate a MacOS platform token used in user agent strings.
+157,mac_processor,Faker().mac_processor(),Generate a MacOS processor token used in user agent strings.
+158,md5,Faker().md5(),"Generate a random MD5 hash.
+
+If ``raw_output`` is ``False`` (default), a hexadecimal string representation of the MD5 hash
+will be returned. If ``True``, a ``bytes`` object representation will be returned instead.
+
+:sample: raw_output=False
+:sample: raw_output=True"
+159,military_apo,Faker().military_apo(),:example: 'PSC 5394 Box 3492
+160,military_dpo,Faker().military_dpo(),:example: 'Unit 3333 Box 9342'
+161,military_ship,Faker().military_ship(),:example: 'USS'
+162,military_state,Faker().military_state(),:example: 'APO'
+163,mime_type,Faker().mime_type(),"Generate a mime type under the specified ``category``.
+
+If ``category`` is ``None``, a random category will be used. The list of
+valid categories include ``'application'``, ``'audio'``, ``'image'``,
+``'message'``, ``'model'``, ``'multipart'``, ``'text'``, and
+``'video'``.
+
+:sample:
+:sample: category='application'"
+164,month,Faker().month(),No docstring available
+165,month_name,Faker().month_name(),No docstring available
+166,msisdn,Faker().msisdn(),https://en.wikipedia.org/wiki/MSISDN
+167,name,Faker().name(),:example: 'John Doe'
+168,name_female,Faker().name_female(),No docstring available
+169,name_male,Faker().name_male(),No docstring available
+170,name_nonbinary,Faker().name_nonbinary(),No docstring available
+171,nic_handle,Faker().nic_handle(),"Returns NIC Handle ID
+https://www.apnic.net/manage-ip/using-whois/guide/person/
+
+:rtype: str"
+172,nic_handles,Faker().nic_handles(),"Returns NIC Handle ID list
+
+:rtype: list[str]"
+173,null_boolean,Faker().null_boolean(),"Generate ``None``, ``True``, or ``False``, each with equal probability."
+174,numerify,Faker().numerify(),"Generate a string with each placeholder in ``text`` replaced according
+to the following rules:
+
+- Number signs ('#') are replaced with a random digit (0 to 9).
+- Percent signs ('%') are replaced with a random non-zero digit (1 to 9).
+- Dollar signs ('$') are replaced with a random digit above two (2 to 9).
+- Exclamation marks ('!') are replaced with a random digit or an empty string.
+- At symbols ('@') are replaced with a random non-zero digit or an empty string.
+
+Under the hood, this method uses :meth:`random_digit() <faker.providers.BaseProvider.random_digit>`,
+:meth:`random_digit_not_null() <faker.providers.BaseProvider.random_digit_not_null>`,
+:meth:`random_digit_or_empty() <faker.providers.BaseProvider.random_digit_or_empty>`,
+and :meth:`random_digit_not_null_or_empty() <faker.providers.BaseProvider.random_digit_not_null_or_empty>`
+to generate the random values.
+
+:sample: text='Intel Core i%-%%##K vs AMD Ryzen % %%##X'
+:sample: text='!!! !!@ !@! !@@ @!! @!@ @@! @@@'"
+175,opera,Faker().opera(),Generate an Opera web browser user agent string.
+176,paragraph,Faker().paragraph(),"Generate a paragraph.
+
+The ``nb_sentences`` argument controls how many sentences the paragraph
+will contain, and setting ``variable_nb_sentences`` to ``False`` will
+generate the exact amount, while setting it to ``True`` (default) will
+generate a random amount (+/-40%, minimum of 1) using
+|randomize_nb_elements|.
+
+Under the hood, |sentences| is used to generate the sentences, so the
+argument ``ext_word_list`` works in the same way here as it would in
+that method.
+
+:sample: nb_sentences=5
+:sample: nb_sentences=5, variable_nb_sentences=False
+:sample: nb_sentences=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']
+:sample: nb_sentences=5, variable_nb_sentences=False,
+         ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+177,paragraphs,Faker().paragraphs(),"Generate a list of paragraphs.
+
+This method uses |paragraph| under the hood to generate paragraphs, and
+the ``nb`` argument controls exactly how many sentences the list will
+contain. The ``ext_word_list`` argument works in exactly the same way
+as well.
+
+:sample: nb=5
+:sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+178,parse,Faker().parse(),"Replaces tokens like '{{ tokenName }}' or '{{tokenName}}' in a string with
+the result from the token method call. Arguments can be parsed by using an
+argument group. For more information on the use of argument groups, please
+refer to the set_arguments() method.
+
+Example:
+
+generator.set_arguments('red_rgb', {'hue': 'red', 'color_format': 'rgb'})
+generator.set_arguments('small', 'max_value', 10)
+
+generator.parse('{{ color:red_rgb }} - {{ pyint:small }}')"
+179,passport_dates,Faker().passport_dates(),"Generates a formatted date of birth, issue, and expiration dates.
+issue and expiration dates are conditioned to fall within U.S. standards of 5 and 10 year expirations
+
+
+The ``birthday`` argument is a datetime.date object representing a date of birth.
+
+Sources:
+
+-https://travel.state.gov/content/travel/en/passports/passport-help/faqs.html"
+180,passport_dob,Faker().passport_dob(),Generate a datetime date of birth.
+181,passport_full,Faker().passport_full(),Generates a formatted sting with US Passport information
+182,passport_gender,Faker().passport_gender(),"Generates a string representing the gender displayed on a passport
+
+Sources:
+
+- https://williamsinstitute.law.ucla.edu/publications/x-gender-markers-passports/"
+183,passport_number,Faker().passport_number(),Generate a passport number by replacing tokens to be alphanumeric
+184,passport_owner,Faker().passport_owner(),"Generate a given_name and surname for a passport owner
+The ``gender`` argument is the gender marker of a passport owner, which is a one character string
+that is either male, female, or non-binary."
+185,password,Faker().password(),"Generate a random password of the specified ``length``.
+
+The arguments ``special_chars``, ``digits``, ``upper_case``, and ``lower_case`` control
+what category of characters will appear in the generated password. If set to ``True``
+(default), at least one character from the corresponding category is guaranteed to appear.
+Special characters are characters from ``!@#$%^&*()_+``, digits are characters from
+``0123456789``, and uppercase and lowercase characters are characters from the ASCII set of
+letters.
+
+:sample: length=12
+:sample: length=40, special_chars=False, upper_case=False"
+186,past_date,Faker().past_date(),"Get a Date object based on a random date between a given date and 1 day
+ago.
+Accepts date strings that can be recognized by strtotime().
+
+:param start_date: Defaults to ""-30d""
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: dtdate('1999-02-02')
+:return: dtdate"
+187,past_datetime,Faker().past_datetime(),"Get a datetime object based on a random date between a given date and 1
+second ago.
+Accepts date strings that can be recognized by strtotime().
+
+:param start_date: Defaults to ""-30d""
+:param tzinfo: timezone, instance of datetime.tzinfo subclass
+:example: datetime('1999-02-02 11:42:52')
+:return: datetime"
+188,phone_number,Faker().phone_number(),No docstring available
+189,port_number,Faker().port_number(),"Returns a network port number
+https://tools.ietf.org/html/rfc6335
+
+:param is_system: System or well-known ports
+:param is_user: User or registered ports
+:param is_dynamic: Dynamic / private / ephemeral ports
+:rtype: int"
+190,postalcode,Faker().postalcode(),No docstring available
+191,postalcode_in_state,Faker().postalcode_in_state(),No docstring available
+192,postalcode_plus4,Faker().postalcode_plus4(),No docstring available
+193,postcode,Faker().postcode(),:example: 86039-9874
+194,postcode_in_state,Faker().postcode_in_state(),":returns: A random postcode within the provided state abbreviation
+
+:param state_abbr: A state abbreviation"
+195,prefix,Faker().prefix(),No docstring available
+196,prefix_female,Faker().prefix_female(),No docstring available
+197,prefix_male,Faker().prefix_male(),No docstring available
+198,prefix_nonbinary,Faker().prefix_nonbinary(),No docstring available
+199,pricetag,Faker().pricetag(),No docstring available
+200,profile,Faker().profile(),"Generates a complete profile.
+If ""fields"" is not empty, only the fields in the list will be returned"
+201,provider,Faker().provider(),No docstring available
+202,psv,Faker().psv(),"Generate random pipe-separated values.
+
+For more information on the different arguments of this method, please refer to
+:meth:`dsv() <faker.providers.misc.Provider.dsv>` which is used under the hood.
+
+:sample: data_columns=('{{name}}', '{{address}}'), num_rows=10, include_row_ids=False
+:sample: header=('Name', 'Address', 'Favorite Color'),
+        data_columns=('{{name}}', '{{address}}', '{{safe_color_name}}'),
+        num_rows=10, include_row_ids=True"
+203,pybool,Faker().pybool(),"Generates a random boolean, optionally biased towards `True` or `False`.
+
+:truth_probability: Probability of generating a `True` value. Must be between `0` and `100` inclusive'.
+:return: Random boolean.
+:raises ValueError: If invalid `truth_probability` is provided."
+204,pydecimal,Faker().pydecimal(),No docstring available
+205,pydict,Faker().pydict(),"Returns a dictionary.
+
+:nb_elements: number of elements for dictionary
+:variable_nb_elements: is use variable number of elements for dictionary
+:value_types: type of dictionary values"
+206,pyfloat,Faker().pyfloat(),No docstring available
+207,pyint,Faker().pyint(),No docstring available
+208,pyiterable,Faker().pyiterable(),No docstring available
+209,pylist,Faker().pylist(),No docstring available
+210,pyobject,Faker().pyobject(),"Generates a random object passing the type desired.
+
+:object_type: the type of the object to generate.
+:return: the random object generated.
+:raises ValueError: if the object type passed is not supported"
+211,pyset,Faker().pyset(),No docstring available
+212,pystr,Faker().pystr(),"Generates a random string of upper and lowercase letters.
+
+:param min_chars: minimum length of the random part.
+:param max_chars: maximum length of the random part.
+:param prefix: an optional prefix to prepend to the random string.
+:param suffix: an optional suffix to append to the random string.
+:return: Random of random length between min and max characters."
+213,pystr_format,Faker().pystr_format(),No docstring available
+214,pystruct,Faker().pystruct(),No docstring available
+215,pytimezone,Faker().pytimezone(),"Generate a random timezone (see `faker.timezone` for any args)
+and return as a python object usable as a `tzinfo` to `datetime`
+or other fakers.
+
+:example: faker.pytimezone()
+:return: dateutil.tz.tz.tzfile"
+216,pytuple,Faker().pytuple(),No docstring available
+217,random_choices,Faker().random_choices(),"Generate a list of objects randomly sampled from ``elements`` with replacement.
+
+For information on the ``elements`` and ``length`` arguments, please refer to
+:meth:`random_elements() <faker.providers.BaseProvider.random_elements>` which
+is used under the hood with the ``unique`` argument explicitly set to ``False``.
+
+:sample: elements=('a', 'b', 'c', 'd')
+:sample: elements=('a', 'b', 'c', 'd'), length=10
+:sample: elements=OrderedDict([
+             (""a"", 0.45),
+             (""b"", 0.35),
+             (""c"", 0.15),
+             (""d"", 0.05),
+         ])
+:sample: elements=OrderedDict([
+             (""a"", 0.45),
+             (""b"", 0.35),
+             (""c"", 0.15),
+             (""d"", 0.05),
+         ]), length=20"
+218,random_digit,Faker().random_digit(),Generate a random digit (0 to 9).
+219,random_digit_above_two,Faker().random_digit_above_two(),Generate a random digit above value two (2 to 9).
+220,random_digit_not_null,Faker().random_digit_not_null(),Generate a random non-zero digit (1 to 9).
+221,random_digit_not_null_or_empty,Faker().random_digit_not_null_or_empty(),"Generate a random non-zero digit (1 to 9) or an empty string.
+
+This method will return an empty string 50% of the time,
+and each digit has a 1/18 chance of being generated."
+222,random_digit_or_empty,Faker().random_digit_or_empty(),"Generate a random digit (0 to 9) or an empty string.
+
+This method will return an empty string 50% of the time,
+and each digit has a 1/20 chance of being generated."
+223,random_element,Faker().random_element(),"Generate a randomly sampled object from ``elements``.
+
+For information on the ``elements`` argument, please refer to
+:meth:`random_elements() <faker.providers.BaseProvider.random_elements>` which
+is used under the hood with the ``unique`` argument set to ``False`` and the
+``length`` argument set to ``1``.
+
+:sample: elements=('a', 'b', 'c', 'd')
+:sample size=10: elements=OrderedDict([
+             (""a"", 0.45),
+             (""b"", 0.35),
+             (""c"", 0.15),
+             (""d"", 0.05),
+         ])"
+224,random_elements,Faker().random_elements(),"Generate a list of randomly sampled objects from ``elements``.
+
+Set ``unique`` to ``False`` for random sampling with replacement, and set ``unique`` to
+``True`` for random sampling without replacement.
+
+If ``length`` is set to ``None`` or is omitted, ``length`` will be set to a random
+integer from 1 to the size of ``elements``.
+
+The value of ``length`` cannot be greater than the number of objects
+in ``elements`` if ``unique`` is set to ``True``.
+
+The value of ``elements`` can be any sequence type (``list``, ``tuple``, ``set``,
+``string``, etc) or an ``OrderedDict`` type. If it is the latter, the keys will be
+used as the objects for sampling, and the values will be used as weighted probabilities
+if ``unique`` is set to ``False``. For example:
+
+.. code-block:: python
+
+    # Random sampling with replacement
+    fake.random_elements(
+        elements=OrderedDict([
+            (""variable_1"", 0.5),        # Generates ""variable_1"" 50% of the time
+            (""variable_2"", 0.2),        # Generates ""variable_2"" 20% of the time
+            (""variable_3"", 0.2),        # Generates ""variable_3"" 20% of the time
+            (""variable_4"": 0.1),        # Generates ""variable_4"" 10% of the time
+        ]), unique=False
+    )
+
+    # Random sampling without replacement (defaults to uniform distribution)
+    fake.random_elements(
+        elements=OrderedDict([
+            (""variable_1"", 0.5),
+            (""variable_2"", 0.2),
+            (""variable_3"", 0.2),
+            (""variable_4"": 0.1),
+        ]), unique=True
+    )
+
+:sample: elements=('a', 'b', 'c', 'd'), unique=False
+:sample: elements=('a', 'b', 'c', 'd'), unique=True
+:sample: elements=('a', 'b', 'c', 'd'), length=10, unique=False
+:sample: elements=('a', 'b', 'c', 'd'), length=4, unique=True
+:sample: elements=OrderedDict([
+                (""a"", 0.45),
+                (""b"", 0.35),
+               (""c"", 0.15),
+               (""d"", 0.05),
+           ]), length=20, unique=False
+:sample: elements=OrderedDict([
+               (""a"", 0.45),
+               (""b"", 0.35),
+               (""c"", 0.15),
+               (""d"", 0.05),
+           ]), unique=True"
+225,random_int,Faker().random_int(),"Generate a random integer between two integers ``min`` and ``max`` inclusive
+while observing the provided ``step`` value.
+
+This method is functionally equivalent to randomly sampling an integer
+from the sequence ``range(min, max + 1, step)``.
+
+:sample: min=0, max=15
+:sample: min=0, max=15, step=3"
+226,random_letter,Faker().random_letter(),Generate a random ASCII letter (a-z and A-Z).
+227,random_letters,Faker().random_letters(),"Generate a list of random ASCII letters (a-z and A-Z) of the specified ``length``.
+
+:sample: length=10"
+228,random_lowercase_letter,Faker().random_lowercase_letter(),Generate a random lowercase ASCII letter (a-z).
+229,random_number,Faker().random_number(),"Generate a random integer according to the following rules:
+
+- If ``digits`` is ``None`` (default), its value will be set to a random
+  integer from 1 to 9.
+- If ``fix_len`` is ``False`` (default), all integers that do not exceed
+  the number of ``digits`` can be generated.
+- If ``fix_len`` is ``True``, only integers with the exact number of
+  ``digits`` can be generated.
+
+:sample: fix_len=False
+:sample: fix_len=True
+:sample: digits=3
+:sample: digits=3, fix_len=False
+:sample: digits=3, fix_len=True"
+230,random_sample,Faker().random_sample(),"Generate a list of objects randomly sampled from ``elements`` without replacement.
+
+For information on the ``elements`` and ``length`` arguments, please refer to
+:meth:`random_elements() <faker.providers.BaseProvider.random_elements>` which
+is used under the hood with the ``unique`` argument explicitly set to ``True``.
+
+:sample: elements=('a', 'b', 'c', 'd', 'e', 'f')
+:sample: elements=('a', 'b', 'c', 'd', 'e', 'f'), length=3"
+231,random_uppercase_letter,Faker().random_uppercase_letter(),Generate a random uppercase ASCII letter (A-Z).
+232,randomize_nb_elements,Faker().randomize_nb_elements(),"Generate a random integer near ``number`` according to the following rules:
+
+- If ``le`` is ``False`` (default), allow generation up to 140% of ``number``.
+  If ``True``, upper bound generation is capped at 100%.
+- If ``ge`` is ``False`` (default), allow generation down to 60% of ``number``.
+  If ``True``, lower bound generation is capped at 100%.
+- If a numerical value for ``min`` is provided, generated values less than ``min``
+  will be clamped at ``min``.
+- If a numerical value for ``max`` is provided, generated values greater than
+  ``max`` will be clamped at ``max``.
+- If both ``le`` and ``ge`` are ``True``, the value of ``number`` will automatically
+  be returned, regardless of the values supplied for ``min`` and ``max``.
+
+:sample: number=100
+:sample: number=100, ge=True
+:sample: number=100, ge=True, min=120
+:sample: number=100, le=True
+:sample: number=100, le=True, max=80
+:sample: number=79, le=True, ge=True, min=80"
+233,rgb_color,Faker().rgb_color(),Generate a color formatted as a comma-separated RGB value.
+234,rgb_css_color,Faker().rgb_css_color(),Generate a color formatted as a CSS rgb() function.
+235,ripe_id,Faker().ripe_id(),"Returns RIPE Organization ID
+https://www.ripe.net/manage-ips-and-asns/db/support/organisation-object-in-the-ripe-database
+
+:rtype: str"
+236,safari,Faker().safari(),Generate a Safari web browser user agent string.
+237,safe_color_name,Faker().safe_color_name(),Generate a web-safe color name.
+238,safe_domain_name,Faker().safe_domain_name(),No docstring available
+239,safe_email,Faker().safe_email(),No docstring available
+240,safe_hex_color,Faker().safe_hex_color(),Generate a web-safe color formatted as a hex triplet.
+241,sbn9,Faker().sbn9(),No docstring available
+242,secondary_address,Faker().secondary_address(),No docstring available
+243,seed_instance,Faker().seed_instance(),"Creates and seeds a new `random.Random` object for each factory
+
+:param seed: seed value"
+244,seed_locale,Faker().seed_locale(),"Creates and seeds a new `random.Random` object for the factory of the specified locale
+
+:param locale: locale string
+:param seed: seed value"
+245,sentence,Faker().sentence(),"Generate a sentence.
+
+The ``nb_words`` argument controls how many words the sentence will
+contain, and setting ``variable_nb_words`` to ``False`` will generate
+the exact amount, while setting it to ``True`` (default) will generate
+a random amount (+/-40%, minimum of 1) using |randomize_nb_elements|.
+
+Under the hood, |words| is used to generate the words, so the argument
+``ext_word_list`` works in the same way here as it would in that method.
+
+:sample: nb_words=10
+:sample: nb_words=10, variable_nb_words=False
+:sample: nb_words=10, ext_word_list=['abc', 'def', 'ghi', 'jkl']
+:sample: nb_words=10, variable_nb_words=True,
+         ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+246,sentences,Faker().sentences(),"Generate a list of sentences.
+
+This method uses |sentence| under the hood to generate sentences, and
+the ``nb`` argument controls exactly how many sentences the list will
+contain. The ``ext_word_list`` argument works in exactly the same way
+as well.
+
+:sample:
+:sample: nb=5
+:sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+247,set_arguments,Faker().set_arguments(),"Creates an argument group, with an individual argument or a dictionary
+of arguments. The argument groups is used to apply arguments to tokens,
+when using the generator.parse() method. To further manage argument
+groups, use get_arguments() and del_arguments() methods.
+
+generator.set_arguments('small', 'max_value', 10)
+generator.set_arguments('small', {'min_value': 5, 'max_value': 10})"
+248,set_formatter,Faker().set_formatter(),"This method adds a provider method to generator.
+Override this method to add some decoration or logging stuff."
+249,sha1,Faker().sha1(),"Generate a random SHA-1 hash.
+
+If ``raw_output`` is ``False`` (default), a hexadecimal string representation of the SHA-1 hash
+will be returned. If ``True``, a ``bytes`` object representation will be returned instead.
+
+:sample: raw_output=False
+:sample: raw_output=True"
+250,sha256,Faker().sha256(),"Generate a random SHA-256 hash.
+
+If ``raw_output`` is ``False`` (default), a hexadecimal string representation of the SHA-256 hash
+will be returned. If ``True``, a ``bytes`` object representation will be returned instead.
+
+:sample: raw_output=False
+:sample: raw_output=True"
+251,simple_profile,Faker().simple_profile(),Generates a basic profile with personal informations
+252,slug,Faker().slug(),Django algorithm
+253,ssn,Faker().ssn(),"Generate a random United States Taxpayer Identification Number of the specified type.
+
+If no type is specified, a US SSN is returned."
+254,state,Faker().state(),No docstring available
+255,state_abbr,Faker().state_abbr(),":returns: A random two-letter USPS postal code
+
+By default, the resulting code may abbreviate any of the fifty states,
+five US territories, or three freely-associating sovereign states.
+
+:param include_territories: If True, territories will be included.
+    If False, US territories will be excluded.
+:param include_freely_associated_states: If True, freely-associated states will be included.
+    If False, sovereign states in free association with the US will be excluded."
+256,street_address,Faker().street_address(),:example: '791 Crist Parks'
+257,street_name,Faker().street_name(),:example: 'Crist Parks'
+258,street_suffix,Faker().street_suffix(),:example: 'Avenue'
+259,suffix,Faker().suffix(),No docstring available
+260,suffix_female,Faker().suffix_female(),No docstring available
+261,suffix_male,Faker().suffix_male(),No docstring available
+262,suffix_nonbinary,Faker().suffix_nonbinary(),No docstring available
+263,swift,Faker().swift(),"Generate a SWIFT code.
+
+SWIFT codes, reading from left to right, are composed of a 4 alphabet
+character bank code, a 2 alphabet character country code, a 2
+alphanumeric location code, and an optional 3 alphanumeric branch code.
+This means SWIFT codes can only have 8 or 11 characters, so the value of
+``length`` can only be ``None`` or the integers ``8`` or ``11``. If the
+value is ``None``, then a value of ``8`` or ``11`` will randomly be
+assigned.
+
+Because all 8-digit SWIFT codes already refer to the primary branch or
+office, the ``primary`` argument only has an effect if the value of
+``length`` is ``11``. If ``primary`` is ``True`` and ``length`` is
+``11``, the 11-digit SWIFT codes generated will always end in ``'XXX'``
+to denote that they belong to primary branches/offices.
+
+For extra authenticity, localized providers may opt to include SWIFT
+bank codes, location codes, and branch codes used in their respective
+locales. If ``use_dataset`` is ``True``, this method will generate SWIFT
+codes based on those locale-specific codes if included. If those codes
+were not included, then it will behave as if ``use_dataset`` were
+``False``, and in that mode, all those codes will just be randomly
+generated as per the specification.
+
+:sample:
+:sample: length=8
+:sample: length=8, use_dataset=True
+:sample: length=11
+:sample: length=11, primary=True
+:sample: length=11, use_dataset=True
+:sample: length=11, primary=True, use_dataset=True"
+264,swift11,Faker().swift11(),"Generate an 11-digit SWIFT code.
+
+This method uses |swift| under the hood with the ``length`` argument set
+to ``11``. If ``primary`` is set to ``True``, the SWIFT code will always
+end with ``'XXX'``. All 11-digit SWIFT codes use this convention to
+refer to the primary branch/office.
+
+:sample:
+:sample: use_dataset=True"
+265,swift8,Faker().swift8(),"Generate an 8-digit SWIFT code.
+
+This method uses |swift| under the hood with the ``length`` argument set
+to ``8`` and with the ``primary`` argument omitted. All 8-digit SWIFT
+codes already refer to the primary branch/office.
+
+:sample:
+:sample: use_dataset=True"
+267,text,Faker().text(),"Generate a text string.
+
+The ``max_nb_chars`` argument controls the approximate number of
+characters the text string will have, and depending on its value, this
+method may use either |words|, |sentences|, or |paragraphs| for text
+generation. The ``ext_word_list`` argument works in exactly the same way
+it would in any of those methods.
+
+:sample: max_nb_chars=20
+:sample: max_nb_chars=80
+:sample: max_nb_chars=160
+:sample: ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+268,texts,Faker().texts(),"Generate a list of text strings.
+
+The ``nb_texts`` argument controls how many text strings the list will
+contain, and this method uses |text| under the hood for text generation,
+so the two remaining arguments, ``max_nb_chars`` and ``ext_word_list``
+will work in exactly the same way as well.
+
+:sample: nb_texts=5
+:sample: nb_texts=5, max_nb_chars=50
+:sample: nb_texts=5, max_nb_chars=50,
+         ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+269,time,Faker().time(),"Get a time string (24h format by default)
+
+:param pattern: format
+:example: '15:02:34'"
+270,time_delta,Faker().time_delta(),Get a timedelta object
+271,time_object,Faker().time_object(),"Get a time object
+
+:example: datetime.time(15, 56, 56, 772876)"
+272,time_series,Faker().time_series(),"Returns a generator yielding tuples of ``(<datetime>, <value>)``.
+
+The data points will start at ``start_date``, and be at every time interval specified by
+``precision``.
+``distrib`` is a callable that accepts ``<datetime>`` and returns ``<value>``"
+273,timezone,Faker().timezone(),No docstring available
+274,tld,Faker().tld(),No docstring available
+276,unix_device,Faker().unix_device(),"Generate a Unix device file name.
+
+If ``prefix`` is ``None``, a random prefix will be used. The list of
+valid prefixes include: ``'sd'``, ``'vd'``, and ``'xvd'``.
+
+:sample:
+:sample: prefix='mmcblk'"
+277,unix_partition,Faker().unix_partition(),"Generate a Unix partition name.
+
+This method uses |unix_device| under the hood to create a device file
+name with the specified ``prefix``.
+
+:sample:
+:sample: prefix='mmcblk'"
+278,unix_time,Faker().unix_time(),"Get a timestamp between January 1, 1970 and now, unless passed
+explicit start_datetime or end_datetime values.
+
+On Windows, the decimal part is always 0.
+
+:example: 1061306726.6"
+279,upc_a,Faker().upc_a(),"Generate a 12-digit UPC-A barcode.
+
+The value of ``upc_ae_mode`` controls how barcodes will be generated. If
+``False`` (default), barcodes are not guaranteed to have a UPC-E
+equivalent. In this mode, the method uses |EnUsBarcodeProvider.ean13|
+under the hood, and the values of ``base`` and ``number_system_digit``
+will be ignored.
+
+If ``upc_ae_mode`` is ``True``, the resulting barcodes are guaranteed to
+have a UPC-E equivalent, and the values of ``base`` and
+``number_system_digit`` will be used to control what is generated.
+
+Under this mode, ``base`` is expected to have a 6-digit string value. If
+any other value is supplied, a random 6-digit string will be used
+instead. As for ``number_system_digit``, the expected value is a ``0``
+or a ``1``. If any other value is provided, this method will randomly
+choose from the two.
+
+.. important::
+   When ``upc_ae_mode`` is enabled, you might encounter instances where
+   different values of ``base`` (e.g. ``'120003'`` and ``'120004'``)
+   produce the same UPC-A barcode. This is normal, and the reason lies
+   within the whole conversion process. To learn more about this and
+   what ``base`` and ``number_system_digit`` actually represent, please
+   refer to |EnUsBarcodeProvider.upc_e|.
+
+:sample:
+:sample: upc_ae_mode=True, number_system_digit=0
+:sample: upc_ae_mode=True, number_system_digit=1
+:sample: upc_ae_mode=True, base='123456', number_system_digit=0
+:sample: upc_ae_mode=True, base='120003', number_system_digit=0
+:sample: upc_ae_mode=True, base='120004', number_system_digit=0"
+280,upc_e,Faker().upc_e(),"Generate an 8-digit UPC-E barcode.
+
+UPC-E barcodes can be expressed in 6, 7, or 8-digit formats, but this
+method uses the 8 digit format, since it is trivial to convert to the
+other two formats. The first digit (starting from the left) is
+controlled by ``number_system_digit``, and it can only be a ``0`` or a
+``1``. The last digit is the check digit that is inherited from the
+UPC-E barcode's UPC-A equivalent. The middle six digits are collectively
+referred to as the ``base`` (for a lack of a better term).
+
+On that note, this method uses ``base`` and ``number_system_digit`` to
+first generate a UPC-A barcode for the check digit, and what happens
+next depends on the value of ``safe_mode``. The argument ``safe_mode``
+exists, because there are some UPC-E values that share the same UPC-A
+equivalent. For example, any UPC-E barcode of the form ``abc0000d``,
+``abc0003d``, and ``abc0004d`` share the same UPC-A value
+``abc00000000d``, but that UPC-A value will only convert to ``abc0000d``
+because of (a) how UPC-E is just a zero-suppressed version of UPC-A and
+(b) the rules around the conversion.
+
+If ``safe_mode`` is ``True`` (default), this method performs another set
+of conversions to guarantee that the UPC-E barcodes generated can be
+converted to UPC-A, and that UPC-A barcode can be converted back to the
+original UPC-E barcode. Using the example above, even if the bases
+``120003`` or ``120004`` are used, the resulting UPC-E barcode will
+always use the base ``120000``.
+
+If ``safe_mode`` is ``False``, then the ``number_system_digit``,
+``base``, and the computed check digit will just be concatenated
+together to produce the UPC-E barcode, and attempting to convert the
+barcode to UPC-A and back again to UPC-E will exhibit the behavior
+described above.
+
+:sample:
+:sample: base='123456'
+:sample: base='123456', number_system_digit=0
+:sample: base='123456', number_system_digit=1
+:sample: base='120000', number_system_digit=0
+:sample: base='120003', number_system_digit=0
+:sample: base='120004', number_system_digit=0
+:sample: base='120000', number_system_digit=0, safe_mode=False
+:sample: base='120003', number_system_digit=0, safe_mode=False
+:sample: base='120004', number_system_digit=0, safe_mode=False"
+281,uri,Faker().uri(),":param schemes: a list of strings to use as schemes, one will chosen randomly.
+    If None, it will generate http and https uris.
+    Passing an empty list will result in schemeless uri generation like ""://domain.com/index.html"".
+:param deep: an integer specifying how many path components the URI should have..
+:return: a random url string."
+282,uri_extension,Faker().uri_extension(),No docstring available
+283,uri_page,Faker().uri_page(),No docstring available
+284,uri_path,Faker().uri_path(),No docstring available
+285,url,Faker().url(),":param schemes: a list of strings to use as schemes, one will chosen randomly.
+    If None, it will generate http and https urls.
+    Passing an empty list will result in schemeless url generation like ""://domain.com"".
+:return: a random url string."
+286,user_agent,Faker().user_agent(),Generate a random web browser user agent string.
+287,user_name,Faker().user_name(),No docstring available
+288,uuid4,Faker().uuid4(),"Generate a random UUID4 object and cast it to another type if specified using a callable ``cast_to``.
+
+By default, ``cast_to`` is set to ``str``.
+
+May be called with ``cast_to=None`` to return a full-fledged ``UUID``.
+
+:sample:
+:sample: cast_to=None"
+289,vin,Faker().vin(),Generate vin number.
+290,windows_platform_token,Faker().windows_platform_token(),Generate a Windows platform token used in user agent strings.
+291,word,Faker().word(),"Generate a word.
+
+This method uses |words| under the hood with the ``nb`` argument set to
+``1`` to generate the result.
+
+:sample:
+:sample: ext_word_list=['abc', 'def', 'ghi', 'jkl']"
+292,words,Faker().words(),"Generate a tuple of words.
+
+The ``nb`` argument controls the number of words in the resulting list,
+and if ``ext_word_list`` is provided, words from that list will be used
+instead of those from the locale provider's built-in word list.
+
+If ``unique`` is ``True``, this method will return a list containing
+unique words. Under the hood, |random_sample| will be used for sampling
+without replacement. If ``unique`` is ``False``, |random_choices| is
+used instead, and the list returned may contain duplicates.
+
+``part_of_speech`` is a parameter that defines to what part of speech
+the returned word belongs. If ``ext_word_list`` is not ``None``, then
+``part_of_speech`` is ignored. If the value of ``part_of_speech`` does
+not correspond to an existent part of speech according to the set locale,
+then an exception is raised.
+
+.. warning::
+   Depending on the length of a locale provider's built-in word list or
+   on the length of ``ext_word_list`` if provided, a large ``nb`` can
+   exhaust said lists if ``unique`` is ``True``, raising an exception.
+
+:sample:
+:sample: nb=5
+:sample: nb=5, ext_word_list=['abc', 'def', 'ghi', 'jkl']
+:sample: nb=4, ext_word_list=['abc', 'def', 'ghi', 'jkl'], unique=True"
+293,xml,Faker().xml(),"Returns some XML.
+
+:nb_elements: number of elements for dictionary
+:variable_nb_elements: is use variable number of elements for dictionary
+:value_types: type of dictionary values
+
+Note: this provider required xmltodict library installed"
+294,year,Faker().year(),No docstring available
+296,zipcode,Faker().zipcode(),No docstring available
+297,zipcode_in_state,Faker().zipcode_in_state(),No docstring available
+298,zipcode_plus4,Faker().zipcode_plus4(),No docstring available
